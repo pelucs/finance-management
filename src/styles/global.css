@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::-webkit-scrollbar{
+  @apply w-2
+}
+
+*::-webkit-scrollbar-thumb{
+  @apply w-2 bg-gray-600 rounded-full
+}
+
+*::-webkit-scrollbar-track{
+  @apply bg-gray-900
+}
+
+.input{
+  @apply flex-1 py-3 pl-3 pr-10 rounded outline-none border border-transparent focus:border-purple-500
+}
+
+.dark-mode{
+  @apply bg-white dark:bg-gray-900 dark:text-gray-100
+}
+
+.dark-mode-border{
+  @apply border-gray-100 dark:border-gray-700
+}
