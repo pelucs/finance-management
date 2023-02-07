@@ -58,7 +58,7 @@ export default () => {
               />
 
               <span className="group-hover:text-purple-500 w-0 md:w-auto transition-all overflow-hidden">
-                Profile
+                Perfil
               </span>
             </Link>
 
