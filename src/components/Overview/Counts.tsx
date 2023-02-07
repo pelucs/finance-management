@@ -1,16 +1,14 @@
 import { useState } from "react";
 import classnames from "classnames";
 import Firebase from '../../libs/firebase';
-import { CaretUp, Plus, Trash } from "phosphor-react";
 
 interface CountsProps{
-  ocultTable: boolean;
-  setOcultTable: (newState: boolean) => void;
+  activeForm: boolean;
+  setActiveForm: (newState: boolean) => void;
 }
 
-export default ({ ocultTable, setOcultTable }: CountsProps) => {
+export default ({ activeForm, setActiveForm }: CountsProps) => {
 
-  const [activeForm, setActiveForm] = useState<boolean>(false);
   const [desc, setDesc] = useState<string>("");
   const [value, setValue] = useState<number>(0);
   const [type, setType] = useState<string>("");
@@ -129,43 +127,6 @@ export default ({ ocultTable, setOcultTable }: CountsProps) => {
             dark:hover:bg-gray-600 transition-colors"
           >
             Fechar
-          </button>
-        </div>
-      </div>
-
-      <div className="mt-5 flex items-center justify-between">
-        <h1 className="font-xl font-bold">
-          Suas de contas
-        </h1>
-
-        <div className="flex gap-3">
-          <button 
-            title="Ocultar tudo"
-            onClick={() => setOcultTable(!ocultTable)}
-            className="p-2 text-sm text-white bg-gray-700 rounded hover:bg-gray-600
-            flex items-center justify-center gap-2"
-          >
-            <CaretUp size={20} weight="bold" className={`realative ${ ocultTable ? 'rotate-180' : 'rotate-0' } transition-all`}/>
-          </button>
-
-          <button 
-            // onClick={() => setActiveForm(!activeForm)}
-            className="py-2 px-3 text-sm text-white bg-purple-500 rounded hover:bg-purple-800
-            flex items-center justify-center gap-2"
-          >
-            <Trash size={20}/>
-
-            Apagar tudo
-          </button>
-
-          <button 
-            onClick={() => setActiveForm(true)}
-            className="py-2 px-3 text-sm text-white bg-purple-500 rounded hover:bg-purple-800
-            flex items-center justify-center gap-2"
-          >
-            <Plus size={20}/>
-
-            Criar conta
           </button>
         </div>
       </div>

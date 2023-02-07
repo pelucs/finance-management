@@ -15,7 +15,8 @@ export default () => {
   const counts = useContext<CountsType[]>(CountsContext);
   const [earnings, setEarnings] = useState<number>(0);
   const [exits, setExits] = useState<number>(0);
-  const [ocultTable, setOcultTable] = useState<boolean>(false);
+  const [ocultTable, setOcultTable] = useState<boolean>(true);
+  const [activeForm, setActiveForm] = useState<boolean>(false);
 
   useEffect(() => {
     let filteringEarnings = counts.filter(count => count.type === "entrada"),
@@ -66,11 +67,15 @@ export default () => {
         </div>
 
         <div className="mt-5">
-          <Counts ocultTable={ocultTable} setOcultTable={setOcultTable}/>
+          <Counts activeForm={activeForm} setActiveForm={setActiveForm}/>
         </div>
 
         <div className="mt-5">
-          <Table ocultTable={ocultTable} setOcultTable={setOcultTable}/>
+          <Table 
+            ocultTable={ocultTable} 
+            setOcultTable={setOcultTable} 
+            setActiveForm={setActiveForm}
+          />
         </div>
 
         <div className="mt-5">
